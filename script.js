@@ -261,14 +261,11 @@ check3.addEventListener("click", function () {
 const loveMessage = `Hey you...
 
 So... you actually made it to the end. 😌
-
 You found where our story started.
 You survived my ridiculous little heart game. 😂❤️
-
 And now you're here.
 
 I wanted to make something for you because sometimes a normal message doesn't feel like enough.
-
 We've never had the chance to be in the same place, to sit beside each other, or just randomly look at each other and smile.
 
 There's a screen between us.
@@ -276,39 +273,26 @@ There are miles between us.
 Sometimes there are days when all we have is a message.
 
 But somehow, none of that stopped you from becoming important to me.
-
 You became someone I look forward to talking to.
 Someone whose message can change my entire mood.
 Someone who can make me smile without even trying.
 
 And honestly... that's a little unfair. 😭
-
 You have way too much power over me. 😂❤️
 
 I don't know exactly where life will take us.
-
 I don't know what our next chapter will look like.
 
 But I know one thing:
-
 I'm really, really glad I met you.
-
 And if I had to go back and do everything again...
-
 I'd still choose that first conversation.
-
 I'd still choose that first message.
-
 I'd still choose you. 💙
-
 So this little website, these puzzles, the stupid hearts, all of it...
-
 was just my tiny way of telling you something much bigger.
-
 You mean more to me than I probably know how to put into words.
-
 I ALWAYS LOVE YoU BABY
-
 ❤️`;
 
 
