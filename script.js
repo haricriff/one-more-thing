@@ -229,10 +229,6 @@ const check3 = document.getElementById("check3");
 
 const finalScreen = document.getElementById("finalScreen");
 const finalMessage = document.getElementById("finalMessage");
-const finalQuestion = document.getElementById("finalQuestion");
-
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
 
 
 check3.addEventListener("click", function () {
@@ -321,11 +317,6 @@ function startFinalReveal() {
 
             clearInterval(typing);
 
-            setTimeout(function () {
-
-                finalQuestion.classList.remove("hidden");
-
-            }, 1000);
 
         }
 
