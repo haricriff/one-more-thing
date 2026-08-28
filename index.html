@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>One More Thing</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <audio id="loveSong" src="uify.mp3" preload="auto"></audio>
+    <!-- PUZZLE 3 -->
+<div class="screen hidden" id="puzzle3">
+
+    <div class="content final-puzzle">
+
+        <p class="subtitle">PUZZLE 03 / 03</p>
+
+        <h2>The Final Question</h2>
+
+        <p class="clue">
+            You've made it this far...
+            <br><br>
+
+            The first clue was about where we began.
+            <br>
+            The second was just for fun.
+            <br><br>
+
+            But this one is about <strong>us.</strong>
+            <br><br>
+
+            If distance is the only thing between two people,
+            does it really have the power to keep them apart?
+        </p>
+
+        <input
+            type="text"
+            id="answer3"
+            placeholder="Your answer..."
+            autocomplete="off"
+        >
+
+        <button id="check3">
+            UNLOCK ❤️
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- FINAL REVEAL -->
+<div class="screen hidden" id="finalScreen">
+
+    <div class="content final-content">
+
+        <p class="subtitle">3 / 3 — COMPLETE</p>
+
+        <h2 id="finalTitle">One More Thing ❤️</h2>
+
+        <p id="finalMessage"></p>
+
+        <div id="finalQuestion" class="hidden">
+
+            <p class="last-question">
+                I hope I made you smile. ❤️
+                <br><br>
+                <strong>Did I need any changes? 👀</strong>
+            </p>
+
+            <div class="choice-buttons">
+
+                <button id="yesBtn">
+                    YES, I HAVE AN IDEA
+                </button>
+
+                <button id="noBtn">
+                    NO, IT'S PERFECT ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+    <!-- PUZZLE 2 -->
+<div class="screen hidden" id="puzzle2">
+
+    <div class="content game-content">
+
+        <p class="subtitle">PUZZLE 02 / 03</p>
+
+        <h2>Catch My Hearts ❤️</h2>
+
+        <p class="game-instruction">
+            Catch <strong>10 hearts</strong> before time runs out.
+        </p>
+
+        <div class="game-stats">
+            <div>
+                <strong id="heartCount">0</strong>
+                <span>HEARTS</span>
+            </div>
+
+            <div>
+                <strong id="timer">15</strong>
+                <span>SECONDS</span>
+            </div>
+        </div>
+
+        <div id="heartGame">
+            <button class="heart" id="heart">❤️</button>
+        </div>
+
+        <p id="gameMessage"></p>
+
+    </div>
+
+</div>
+
+    <!-- WELCOME SCREEN -->
+    <div class="screen" id="welcomeScreen">
+
+        <div class="content">
+
+            <p class="subtitle">A LITTLE SOMETHING</p>
+
+            <h1>One More Thing</h1>
+
+            <p id="introText"></p>
+
+            <div class="challenges">
+                <strong>3</strong>
+                <span>little challenges</span>
+            </div>
+
+            <button id="beginBtn">
+                BEGIN <span>→</span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PUZZLE 1 -->
+    <div class="screen hidden" id="puzzle1">
+
+        <div class="content">
+
+            <p class="subtitle">PUZZLE 01 / 03</p>
+
+            <h2>Where did we meet?</h2>
+
+            <p class="clue">
+                Our story started somewhere
+                you probably never expected.
+                <br><br>
+                I wasn't a place.
+                I wasn't a person.
+                <br><br>
+                I was where two strangers
+                first crossed paths.
+                <br><br>
+                <strong>Can you remember where it began?</strong>
+            </p>
+
+            <input
+                type="text"
+                id="answer1"
+                placeholder="Your answer..."
+                autocomplete="off"
+            >
+
+            <button id="check1">
+                UNLOCK →
+            </button>
+
+            <p id="result1"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
