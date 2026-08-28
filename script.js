@@ -17,6 +17,7 @@ const gameMessage = document.getElementById("gameMessage");
 
 const loveSong = document.getElementById("loveSong");
 
+
 /* -------------------------
    WELCOME TYPING EFFECT
 ------------------------- */
@@ -79,7 +80,8 @@ check1.addEventListener("click", function () {
 
     } else {
 
-        result1.textContent = "Hmm... not quite. Try again 😏";
+        result1.textContent =
+            "Hmm... not quite. Try again 😏";
 
     }
 
@@ -93,6 +95,7 @@ check1.addEventListener("click", function () {
 let heartsCaught = 0;
 let timeLeft = 15;
 let gameRunning = false;
+
 let timerInterval;
 let moveInterval;
 
@@ -107,9 +110,9 @@ function startHeartGame() {
     timerDisplay.textContent = "15";
     gameMessage.textContent = "";
 
-    moveHeart();
+    heart.style.display = "block";
 
-    moveInterval = setInterval(moveHeart, 1100);
+    moveHeart();
 
     timerInterval = setInterval(function () {
 
@@ -124,34 +127,52 @@ function startHeartGame() {
         }
 
     }, 1000);
+
 }
 
 
+/* -------------------------
+   MOVE HEART
+------------------------- */
+
 function moveHeart() {
+
+    if (!gameRunning) return;
 
     const gameWidth = heartGame.clientWidth;
     const gameHeight = heartGame.clientHeight;
 
     const heartSize = 55;
 
-    const x = Math.random() * (gameWidth - heartSize);
-    const y = Math.random() * (gameHeight - heartSize);
+    const x =
+        Math.random() * (gameWidth - heartSize);
+
+    const y =
+        Math.random() * (gameHeight - heartSize);
 
     heart.style.left = `${x}px`;
     heart.style.top = `${y}px`;
 
+
     /*
-       Gets faster as she catches more hearts.
+       Starts slow and gradually becomes faster.
     */
 
     const speed =
-    Math.max(800, 1800 - heartsCaught * 60);
+        Math.max(800, 1800 - heartsCaught * 60);
+
 
     clearInterval(moveInterval);
 
-    moveInterval = setInterval(moveHeart, speed);
+    moveInterval =
+        setInterval(moveHeart, speed);
+
 }
 
+
+/* -------------------------
+   CATCH HEART
+------------------------- */
 
 heart.addEventListener("click", function () {
 
@@ -161,11 +182,15 @@ heart.addEventListener("click", function () {
 
     heartCount.textContent = heartsCaught;
 
+
     /* Phone vibration where supported */
 
     if (navigator.vibrate) {
+
         navigator.vibrate(35);
+
     }
+
 
     if (heartsCaught >= 10) {
 
@@ -180,12 +205,17 @@ heart.addEventListener("click", function () {
 });
 
 
+/* -------------------------
+   END HEART GAME
+------------------------- */
+
 function endHeartGame(won) {
 
     gameRunning = false;
 
     clearInterval(timerInterval);
     clearInterval(moveInterval);
+
 
     if (won) {
 
@@ -194,20 +224,24 @@ function endHeartGame(won) {
         gameMessage.textContent =
             "You caught them all. ❤️";
 
+
         setTimeout(function () {
 
-    puzzle2.classList.add("hidden");
+            puzzle2.classList.add("hidden");
 
-    puzzle3.classList.remove("hidden");
+            puzzle3.classList.remove("hidden");
 
-}, 900);
+        }, 900);
+
 
     } else {
 
         gameMessage.textContent =
             "Almost... try again ❤️";
 
+
         heart.style.display = "block";
+
 
         setTimeout(function () {
 
@@ -218,28 +252,44 @@ function endHeartGame(won) {
     }
 
 }
+
+
 /* -------------------------
    PUZZLE 3
 ------------------------- */
 
-const puzzle3 = document.getElementById("puzzle3");
+const puzzle3 =
+    document.getElementById("puzzle3");
 
-const answer3 = document.getElementById("answer3");
-const check3 = document.getElementById("check3");
+const answer3 =
+    document.getElementById("answer3");
 
-const finalScreen = document.getElementById("finalScreen");
-const finalMessage = document.getElementById("finalMessage");
+const check3 =
+    document.getElementById("check3");
 
+const finalScreen =
+    document.getElementById("finalScreen");
+
+const finalMessage =
+    document.getElementById("finalMessage");
+
+
+/* -------------------------
+   PUZZLE 3 BUTTON
+------------------------- */
 
 check3.addEventListener("click", function () {
 
-    const answer = answer3.value.trim();
+    const answer =
+        answer3.value.trim();
+
 
     if (answer.length === 0) {
 
         return;
 
     }
+
 
     puzzle3.classList.add("hidden");
 
@@ -251,17 +301,20 @@ check3.addEventListener("click", function () {
 
 
 /* -------------------------
-   FINAL MESSAGE
+   FINAL LOVE MESSAGE
 ------------------------- */
 
 const loveMessage = `Hey you...
 
 So... you actually made it to the end. 😌
+
 You found where our story started.
 You survived my ridiculous little heart game. 😂❤️
+
 And now you're here.
 
 I wanted to make something for you because sometimes a normal message doesn't feel like enough.
+
 We've never had the chance to be in the same place, to sit beside each other, or just randomly look at each other and smile.
 
 There's a screen between us.
@@ -269,54 +322,112 @@ There are miles between us.
 Sometimes there are days when all we have is a message.
 
 But somehow, none of that stopped you from becoming important to me.
+
 You became someone I look forward to talking to.
 Someone whose message can change my entire mood.
 Someone who can make me smile without even trying.
 
 And honestly... that's a little unfair. 😭
+
 You have way too much power over me. 😂❤️
 
 I don't know exactly where life will take us.
+
 I don't know what our next chapter will look like.
 
 But I know one thing:
-I'm really, really glad I met you.
-And if I had to go back and do everything again...
-I'd still choose that first conversation.
-I'd still choose that first message.
-I'd still choose you. 💙
-So this little website, these puzzles, the stupid hearts, all of it...
-was just my tiny way of telling you something much bigger.
-You mean more to me than I probably know how to put into words.
-I ALWAYS LOVE YoU BABY
-❤️`;
 
+I'm really, really glad I met you.
+
+And if I had to go back and do everything again...
+
+I'd still choose that first conversation.
+
+I'd still choose that first message.
+
+I'd still choose you. 💙
+
+So this little website, these puzzles, the stupid hearts, all of it...
+
+was just my tiny way of telling you something much bigger.
+
+You mean more to me than I probably know how to put into words.
+
+I will always love you, baby. ❤️`;
+
+
+/* -------------------------
+   FINAL REVEAL
+------------------------- */
 
 function startFinalReveal() {
 
+    /*
+       Start the song
+    */
+
     loveSong.currentTime = 0;
 
-    loveSong.play().catch(function(error) {
-        console.log("Music could not start:", error);
+    loveSong.play().catch(function (error) {
+
+        console.log(
+            "Music could not start:",
+            error
+        );
+
     });
+
 
     let index = 0;
 
+    let lastScroll = 0;
+
+
     finalMessage.textContent = "";
 
+
+    /*
+       Type the final message
+    */
 
     const typing = setInterval(function () {
 
         if (index < loveMessage.length) {
 
-            finalMessage.textContent += loveMessage[index];
+            finalMessage.textContent +=
+                loveMessage[index];
 
             index++;
+
+
+            /*
+               Smooth auto-scroll.
+
+               It doesn't scroll every character.
+               It scrolls after several characters
+               or when a new line appears.
+            */
+
+            if (
+                index - lastScroll >= 8 ||
+                loveMessage[index - 1] === "\n"
+            ) {
+
+                finalMessage.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "end"
+
+                });
+
+                lastScroll = index;
+
+            }
 
         } else {
 
             clearInterval(typing);
-
 
         }
 
