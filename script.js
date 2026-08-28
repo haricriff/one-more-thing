@@ -145,7 +145,7 @@ function moveHeart() {
     */
 
     const speed =
-        Math.max(350, 1100 - heartsCaught * 70);
+    Math.max(800, 1800 - heartsCaught * 60);
 
     clearInterval(moveInterval);
 
