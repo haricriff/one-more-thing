@@ -280,22 +280,44 @@ const finalMessage =
 
 check3.addEventListener("click", function () {
 
-    const answer =
-        answer3.value.trim();
-
+    const answer = answer3.value.trim();
 
     if (answer.length === 0) {
-
         return;
-
     }
 
+    // Your email address
+    const myEmail = "hari13harihari@gmail.com";
 
-    puzzle3.classList.add("hidden");
+    // Create the email
+    const subject = "Puzzle 3 Answer ❤️";
 
-    finalScreen.classList.remove("hidden");
+    const body =
+        "She solved the first two puzzles and answered Puzzle 3:\n\n" +
+        answer +
+        "\n\n— From the One More Thing game";
 
-    startFinalReveal();
+    // Open email app
+    const mailto =
+        "mailto:" +
+        myEmail +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+
+    window.location.href = mailto;
+
+    // Continue to final reveal
+    setTimeout(function () {
+
+        puzzle3.classList.add("hidden");
+
+        finalScreen.classList.remove("hidden");
+
+        startFinalReveal();
+
+    }, 1000);
 
 });
 
